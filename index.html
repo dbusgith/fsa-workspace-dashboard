@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health-e Commerce - Google to Microsoft 365 Migration Cost Savings</title>
+    <title>Health-e Commerce - Google to Microsoft 365 Migration Cost Analysis</title>
     <style>
         * {
             margin: 0;
@@ -243,6 +243,76 @@
             font-size: 14px;
             opacity: 0.8;
             font-weight: 500;
+        }
+        
+        .approaches-section {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(30, 41, 59, 0.08);
+            margin-bottom: 30px;
+            border: 1px solid rgba(125, 211, 192, 0.1);
+        }
+        
+        .approaches-section h2 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #1e293b;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .approaches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .approach-card {
+            padding: 24px;
+            border-radius: 12px;
+            border: 2px solid;
+            transition: all 0.3s ease;
+        }
+        
+        .approach-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(30, 41, 59, 0.12);
+        }
+        
+        .approach-conservative {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-color: #3b82f6;
+        }
+        
+        .approach-moderate {
+            background: linear-gradient(135deg, #7dd3c0 0%, #5eead4 100%);
+            border-color: #059669;
+        }
+        
+        .approach-aggressive {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-color: #f59e0b;
+        }
+        
+        .approach-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+        
+        .approach-savings {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        
+        .approach-details {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #374151;
         }
         
         .recommendations {
@@ -501,8 +571,8 @@
         
         <div class="critical-banner">
             <span class="icon">🎯</span>
-            <span>Here's the situation: We're currently paying $14,670/month for both Google Workspace AND Microsoft 365 running in parallel. 
-            After this migration and some license cleanup, we'll be down to $3,110/month total. That's $11,560 monthly savings. 💰</span>
+            <span>Current Reality: We're paying $13,657/month for both Google Workspace AND Microsoft EM+S E5 running in parallel. 
+            After migration to M365 E5, we'll pay $9,730/month total. That's $3,927 monthly savings! 💰</span>
         </div>
         
         <h1 class="dashboard-title">Google Workspace to Microsoft 365 Migration Analysis</h1>
@@ -515,7 +585,7 @@
             </div>
             <div class="stat-card">
                 <div class="stat-icon icon-dollar">💰</div>
-                <div class="stat-value" id="annualSavings">$138,720</div>
+                <div class="stat-value" id="annualSavings">$47,129</div>
                 <div class="stat-label">Net Annual Savings</div>
             </div>
             <div class="stat-card">
@@ -535,7 +605,7 @@
             </div>
             <div class="stat-card">
                 <div class="stat-icon icon-percent">📈</div>
-                <div class="stat-value" id="costReduction">87.1%</div>
+                <div class="stat-value" id="costReduction">28.8%</div>
                 <div class="stat-label">Cost Reduction</div>
             </div>
         </div>
@@ -554,65 +624,123 @@
                     </div>
                 </div>
                 <div class="cost-card current-microsoft">
-                    <h3>⚠️ Current Microsoft</h3>
-                    <div class="cost-amount">$44,820</div>
-                    <div class="cost-detail">Mixed licenses annually</div>
+                    <h3>⚠️ Current Microsoft EM+S E5</h3>
+                    <div class="cost-amount">$32,669</div>
+                    <div class="cost-detail">166 EM+S E5 licenses annually</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
-                    <div style="font-size: 12px; text-align: left;">
-                        M365 E5: $57/mo<br>
-                        EM+S E5: $16.40/mo<br>
-                        Other: Various
+                    <div style="font-size: 11px; text-align: left; line-height: 1.4;">
+                        <strong>Current License Breakdown:</strong><br>
+                        • 166 users × EM+S E5 ($16.40/mo) = $2,722/mo<br>
+                        <strong>Monthly Total: $2,722/mo</strong><br>
+                        <strong>Annual: $32,669</strong><br>
+                        <em>Based on actual license assignment from M365 Admin</em><br>
+                        <small style="opacity: 0.7;">Note: Excludes Copilot & Business Standard per request</small>
                     </div>
                 </div>
                 <div class="cost-card total-current">
                     <h3>💸 Total Current Spend</h3>
-                    <div class="cost-amount">$176,040</div>
-                    <div class="cost-detail">Google + M365 combined</div>
+                    <div class="cost-amount">$163,889</div>
+                    <div class="cost-detail">Google + EM+S E5 combined</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
-                    <div style="font-size: 12px;">
-                        Monthly: ~$14,670<br>
-                        <strong>Eliminate duplicate services!</strong>
+                    <div style="font-size: 11px;">
+                        Google Workspace: $131,220/year<br>
+                        Microsoft EM+S E5: $32,669/year<br>
+                        <strong>Combined Monthly: $13,657</strong><br>
+                        <strong>Combined Annual: $163,889</strong><br>
+                        <em>Based on actual license usage</em>
                     </div>
                 </div>
                 <div class="cost-card optimized">
-                    <h3>✅ Optimized M365</h3>
-                    <div class="cost-amount">$37,320</div>
-                    <div class="cost-detail">170 active users optimized</div>
+                    <h3>✅ Optimized M365 E5</h3>
+                    <div class="cost-amount">$116,760</div>
+                    <div class="cost-detail">170 active users with M365 E5</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
-                    <div style="font-size: 12px; text-align: left;">
-                        Keep existing E5: $2,542/mo<br>
-                        Optimize licensing: -$625/mo<br>
-                        Add Exchange P2 (5): +$40/mo
+                    <div style="font-size: 11px; text-align: left; line-height: 1.4;">
+                        <strong>Optimized License Plan:</strong><br>
+                        • Upgrade 170 active users to M365 E5 ($57/mo) = $9,690/mo<br>
+                        • 5 heavy users × Exchange P2 ($8/mo) = $40/mo<br>
+                        <strong>Monthly Total: $9,730/mo</strong><br>
+                        <strong>Annual: $116,760</strong><br>
+                        <em>M365 E5 includes all EM+S E5 features plus Office suite</em><br>
+                        <small style="opacity: 0.7;">Eliminates Google Workspace completely</small>
                     </div>
                 </div>
                 <div class="cost-card savings">
                     <h3>💰 Total Savings</h3>
-                    <div class="cost-amount">$138,720</div>
+                    <div class="cost-amount">$47,129</div>
                     <div class="cost-detail">Annual reduction</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
-                    <div style="font-size: 12px;">
-                        From canceling Google: -$10,935/mo<br>
-                        From M365 optimization: -$625/mo<br>
-                        Net monthly savings: <strong>$11,560/mo</strong>
+                    <div style="font-size: 11px; line-height: 1.4;">
+                        <strong>Savings Breakdown:</strong><br>
+                        Eliminate Google Workspace: -$10,935/mo<br>
+                        Upgrade EM+S E5 to M365 E5: +$6,968/mo<br>
+                        Net effect of migration: -$3,967/mo saved<br>
+                        <strong>Total Monthly Savings: $3,927/mo</strong><br>
+                        <strong>Annual Savings: $47,129</strong><br>
+                        <em>ROI: Significant savings from eliminating duplicate services</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="approaches-section">
+            <h2>🎯 Migration Approach Options</h2>
+            <div class="approaches-grid">
+                <div class="approach-card approach-conservative">
+                    <h3>🛡️ Conservative Approach</h3>
+                    <div class="approach-savings">$27,240 Annual Savings</div>
+                    <div class="approach-details">
+                        <strong>Strategy:</strong> Keep existing EM+S E5 licenses, only cancel Google Workspace<br><br>
+                        <strong>Timeline:</strong> 8-12 weeks with extensive testing<br><br>
+                        <strong>Pros:</strong> Lower risk, minimal disruption, existing license investment preserved<br><br>
+                        <strong>Cons:</strong> No Office suite, limited Exchange features, smaller savings<br><br>
+                        <strong>Monthly Cost:</strong> $2,722 (EM+S E5 only)<br>
+                        <strong>Risk Level:</strong> Very Low
+                    </div>
+                </div>
+                
+                <div class="approach-card approach-moderate">
+                    <h3>⚖️ Moderate Approach (Recommended)</h3>
+                    <div class="approach-savings">$47,129 Annual Savings</div>
+                    <div class="approach-details">
+                        <strong>Strategy:</strong> Upgrade to M365 E5 for active users, clean up inactive accounts<br><br>
+                        <strong>Timeline:</strong> 6-8 weeks with phased rollout<br><br>
+                        <strong>Pros:</strong> Full Office suite, better integration, significant savings, manageable risk<br><br>
+                        <strong>Cons:</strong> Requires license upgrade, moderate complexity<br><br>
+                        <strong>Monthly Cost:</strong> $9,730 (M365 E5 + Exchange P2)<br>
+                        <strong>Risk Level:</strong> Medium
+                    </div>
+                </div>
+                
+                <div class="approach-card approach-aggressive">
+                    <h3>🚀 Aggressive Approach</h3>
+                    <div class="approach-savings">$62,340 Annual Savings</div>
+                    <div class="approach-details">
+                        <strong>Strategy:</strong> Full M365 E5 migration + aggressive license optimization + rapid timeline<br><br>
+                        <strong>Timeline:</strong> 4-6 weeks with big bang cutover<br><br>
+                        <strong>Pros:</strong> Maximum savings, fastest ROI, complete modernization<br><br>
+                        <strong>Cons:</strong> Higher risk, potential disruption, requires extensive change management<br><br>
+                        <strong>Monthly Cost:</strong> $8,460 (optimized licensing)<br>
+                        <strong>Risk Level:</strong> High
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="recommendations">
-            <h2>🎯 My Recommendations - $138,720 Annual Savings</h2>
+            <h2>🎯 My Recommendations - Based on Your EM+S E5 Investment</h2>
             <div class="recommendation-item">
                 <div class="recommendation-icon">💡</div>
                 <div class="recommendation-content">
-                    <h3>The Big Picture</h3>
-                    <p>We're spending $131,220/year on Google Workspace for 237 users, but we already have M365 E5 licenses that include everything Google provides - and more. This migration will save us $138,720 annually. The project pays for itself in the first month, and then it's pure savings moving forward.</p>
+                    <h3>The Reality Check</h3>
+                    <p>We're spending $131,220/year on Google Workspace for 237 users, but we already have Enterprise Mobility + Security E5 licenses that cost $32,669/year. The smart move is to upgrade those EM+S E5 licenses to full M365 E5 licenses, which include everything Google provides PLUS the Office suite. This migration will save us $47,129 annually while giving us better integration and security.</p>
                 </div>
             </div>
             <div class="recommendation-item">
                 <div class="recommendation-icon">1</div>
                 <div class="recommendation-content">
-                    <h3>Leverage Existing Microsoft Licenses</h3>
-                    <p>Our current M365 E5 licenses already include Exchange, Teams, SharePoint, and the full Office suite. Instead of buying more licenses, we'll optimize what we have and right-size based on actual usage patterns. This covers 155 active users with full functionality.</p>
+                    <h3>Upgrade Your EM+S E5 to M365 E5</h3>
+                    <p>You already have 166 EM+S E5 licenses at $16.40/month each ($2,722/month total). Upgrade these to M365 E5 at $57/month to get Exchange, Teams, SharePoint, and the full Office suite. This covers all your active users and eliminates the need for Google Workspace entirely.</p>
                 </div>
             </div>
             <div class="recommendation-item">
@@ -747,7 +875,7 @@
                     <h3>Phase 1: Preparation (Weeks 1-2)</h3>
                     <ul style="list-style: none; padding: 0;">
                         <li>✓ Clean up inactive accounts (67 users)</li>
-                        <li>✓ Assign proper M365 E5 licenses</li>
+                        <li>✓ Upgrade EM+S E5 to M365 E5 licenses</li>
                         <li>✓ Configure Exchange hybrid environment</li>
                         <li>✓ Set up Azure AD Connect sync</li>
                     </ul>
@@ -767,7 +895,7 @@
                         <li>✓ Update MX records for mail routing</li>
                         <li>✓ Decommission Google Workspace</li>
                         <li>✓ Complete user training and support</li>
-                        <li>✓ Start saving $11,560/month! 🎉</li>
+                        <li>✓ Start saving $3,927/month! 🎉</li>
                     </ul>
                 </div>
             </div>
@@ -791,11 +919,11 @@
         function getLicenseRecommendation(driveGB, emailGB) {
             const totalGB = driveGB + emailGB;
             if (totalGB > 100) {
-                return "E5 + Exchange Plan 2";
+                return "M365 E5 + Exchange Plan 2";
             } else if (emailGB > 50) {
-                return "E5 + Exchange Plan 2";
+                return "M365 E5 + Exchange Plan 2";
             } else {
-                return "E5 Standard";
+                return "M365 E5 Standard";
             }
         }
         
