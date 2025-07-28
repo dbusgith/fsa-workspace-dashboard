@@ -647,8 +647,70 @@
                     <strong>Total Users in System: <span id="totalUserCount">Loading...</span></strong>
                 </div>
                 <div>
-                    <input type="text" id="searchInput" placeholder="Search users..." style="padding: 10px 16px; border: 2px solid rgba(125, 211, 192, 0.3); border-radius: 8px; width: 300px; margin-right: 12px; font-size: 14px; transition: border-color 0.2s ease; outline: none;" onfocus="this.style.borderColor='#7dd3c0'" onblur="this.style.borderColor='rgba(125, 211, 192, 0.3)'">
                     <button onclick="exportToCSV()" style="background: linear-gradient(135deg, #7dd3c0 0%, #5eead4 100%); color: #1e293b; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(125, 211, 192, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 16px rgba(125, 211, 192, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(125, 211, 192, 0.3)'">📥 Export All Users</button>
+                </div>
+            </div>
+            
+            <!-- Advanced Filtering Controls -->
+            <div style="background: #f8fafc; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(125, 211, 192, 0.2);">
+                <h3 style="margin-bottom: 15px; color: #1e293b; font-size: 16px;">Filter Users:</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 15px;">
+                    <!-- Status Filter -->
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500; color: #374151;">Status:</label>
+                        <select id="statusFilter" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px; background: white;">
+                            <option value="">All Statuses</option>
+                            <option value="Active">Active</option>
+                            <option value="Suspended">Suspended</option>
+                            <option value="Archived">Archived</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Action Filter -->
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500; color: #374151;">Recommended Action:</label>
+                        <select id="actionFilter" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px; background: white;">
+                            <option value="">All Actions</option>
+                            <option value="Delete">Delete/Archive</option>
+                            <option value="Review">Review for deletion</option>
+                            <option value="Standard">Standard migration</option>
+                            <option value="Extended">Extended migration window</option>
+                            <option value="CRITICAL">CRITICAL: Extended migration window</option>
+                            <option value="Convert">Convert to shared mailbox</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Storage Filter -->
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500; color: #374151;">Total Storage:</label>
+                        <select id="storageFilter" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px; background: white;">
+                            <option value="">All Storage Sizes</option>
+                            <option value="high">100GB+ (Need Plan 2)</option>
+                            <option value="medium">10-100GB</option>
+                            <option value="low">Under 10GB</option>
+                            <option value="empty">No Data (0GB)</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Last Login Filter -->
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: 500; color: #374151;">Last Login:</label>
+                        <select id="loginFilter" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px; background: white;">
+                            <option value="">All Login Times</option>
+                            <option value="recent">Last 30 days</option>
+                            <option value="active">Last 6 months</option>
+                            <option value="old">Over 1 year ago</option>
+                            <option value="ancient">Before 2022</option>
+                            <option value="never">Never logged in</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Search and Reset -->
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <input type="text" id="searchInput" placeholder="Search by name or email..." style="padding: 10px 16px; border: 2px solid rgba(125, 211, 192, 0.3); border-radius: 8px; flex: 1; font-size: 14px; transition: border-color 0.2s ease; outline: none;" onfocus="this.style.borderColor='#7dd3c0'" onblur="this.style.borderColor='rgba(125, 211, 192, 0.3)'">
+                    <button onclick="resetFilters()" style="background: #6b7280; color: white; padding: 10px 16px; border: none; border-radius: 8px; cursor: pointer; font-weight: 500;">Clear Filters</button>
                 </div>
             </div>
             
@@ -841,26 +903,120 @@
             console.log(`Stats updated: ${activeUsers} active, ${usersToDelete} to delete, ${largeMailboxes} large mailboxes`);
         }
         
-        // Search functionality
-        document.getElementById('searchInput').addEventListener('keyup', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
+        // Search and filtering functionality
+        function applyFilters() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const statusFilter = document.getElementById('statusFilter').value;
+            const actionFilter = document.getElementById('actionFilter').value;
+            const storageFilter = document.getElementById('storageFilter').value;
+            const loginFilter = document.getElementById('loginFilter').value;
+            
             const rows = document.querySelectorAll('#userTableBody tr');
             let visibleCount = 0;
             
             rows.forEach(row => {
-                const text = row.textContent.toLowerCase();
-                const isVisible = text.includes(searchTerm);
-                row.style.display = isVisible ? '' : 'none';
-                if (isVisible) visibleCount++;
+                const cells = row.cells;
+                if (!cells || cells.length < 9) return; // Skip loading row
+                
+                const email = cells[0].textContent.toLowerCase();
+                const name = cells[1].textContent.toLowerCase();
+                const status = cells[2].textContent.trim();
+                const lastLogin = cells[3].textContent;
+                const totalStorage = parseFloat(cells[6].textContent);
+                const action = cells[8].textContent;
+                
+                let visible = true;
+                
+                // Text search
+                if (searchTerm && !email.includes(searchTerm) && !name.includes(searchTerm)) {
+                    visible = false;
+                }
+                
+                // Status filter
+                if (statusFilter && !status.includes(statusFilter)) {
+                    visible = false;
+                }
+                
+                // Action filter
+                if (actionFilter) {
+                    if (actionFilter === 'Delete' && !action.includes('Delete') && !action.includes('Archive')) {
+                        visible = false;
+                    } else if (actionFilter === 'Review' && !action.includes('Review')) {
+                        visible = false;
+                    } else if (actionFilter === 'Standard' && !action.includes('Standard')) {
+                        visible = false;
+                    } else if (actionFilter === 'Extended' && !action.includes('Extended') && !action.includes('overnight')) {
+                        visible = false;
+                    } else if (actionFilter === 'CRITICAL' && !action.includes('CRITICAL')) {
+                        visible = false;
+                    } else if (actionFilter === 'Convert' && !action.includes('Convert')) {
+                        visible = false;
+                    }
+                }
+                
+                // Storage filter
+                if (storageFilter) {
+                    if (storageFilter === 'high' && totalStorage < 100) {
+                        visible = false;
+                    } else if (storageFilter === 'medium' && (totalStorage < 10 || totalStorage >= 100)) {
+                        visible = false;
+                    } else if (storageFilter === 'low' && (totalStorage >= 10 || totalStorage === 0)) {
+                        visible = false;
+                    } else if (storageFilter === 'empty' && totalStorage !== 0) {
+                        visible = false;
+                    }
+                }
+                
+                // Login filter
+                if (loginFilter) {
+                    const loginDate = new Date(lastLogin);
+                    const now = new Date();
+                    const daysDiff = (now - loginDate) / (1000 * 60 * 60 * 24);
+                    
+                    if (loginFilter === 'recent' && daysDiff > 30) {
+                        visible = false;
+                    } else if (loginFilter === 'active' && daysDiff > 180) {
+                        visible = false;
+                    } else if (loginFilter === 'old' && daysDiff < 365) {
+                        visible = false;
+                    } else if (loginFilter === 'ancient' && loginDate >= new Date('2022-01-01')) {
+                        visible = false;
+                    } else if (loginFilter === 'never' && !lastLogin.includes('Never')) {
+                        visible = false;
+                    }
+                }
+                
+                row.style.display = visible ? '' : 'none';
+                if (visible) visibleCount++;
             });
             
             // Update user count display
-            if (searchTerm) {
-                document.getElementById('userCount').textContent = `Showing ${visibleCount} of ${users.length} users`;
+            const hasFilters = searchTerm || statusFilter || actionFilter || storageFilter || loginFilter;
+            if (hasFilters) {
+                document.getElementById('userCount').textContent = `Showing ${visibleCount} of ${users.length} users (filtered)`;
             } else {
                 document.getElementById('userCount').textContent = `Showing all ${users.length} users`;
             }
-        });
+        }
+        
+        // Reset all filters
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('statusFilter').value = '';
+            document.getElementById('actionFilter').value = '';
+            document.getElementById('storageFilter').value = '';
+            document.getElementById('loginFilter').value = '';
+            applyFilters();
+        }
+        
+        // Add event listeners for all filters
+        function setupFilterListeners() {
+            document.getElementById('searchInput').addEventListener('keyup', applyFilters);
+            document.getElementById('statusFilter').addEventListener('change', applyFilters);
+            document.getElementById('actionFilter').addEventListener('change', applyFilters);
+            document.getElementById('storageFilter').addEventListener('change', applyFilters);
+            document.getElementById('loginFilter').addEventListener('change', applyFilters);
+        }
         
         // Export to CSV - exports ALL users
         function exportToCSV() {
@@ -932,6 +1088,9 @@
                 // Populate table with ALL users - no limit or pagination
                 populateUserTable(users);
                 
+                // Set up filter event listeners
+                setupFilterListeners();
+                
             } catch (error) {
                 console.error('Error loading user data:', error);
                 
@@ -951,6 +1110,9 @@
                 // Update with sample data
                 updateDashboardStats(users);
                 populateUserTable(users);
+                
+                // Set up filter event listeners
+                setupFilterListeners();
             }
         }
         
