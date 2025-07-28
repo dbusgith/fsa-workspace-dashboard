@@ -1,0 +1,54 @@
+        // Load actual user data from JSON file
+        async function loadUserData() {
+            try {
+                const response = await window.fs.readFile('User_Download_24072025_221436.json', { encoding: 'utf8' });
+                const data = JSON.parse(response);
+                
+                // Extract users from the data structure and convert to our format
+                const rawUsers = data.users || [];
+                
+                users = rawUsers.map(user => {
+                    // Parse storage values from strings like "17.11GB" to numbers
+                    const emailGB = parseFloat(user["Email Usage [READ ONLY]"]?.replace('GB', '') || '0');
+                    const driveGB = parseFloat(user["Drive Usage [READ ONLY]"]?.replace('GB', '') || '0');
+                    
+                    return {
+                        email: user["Email Address [Required]"] || '',
+                        status: user["Status [READ ONLY]"] || '',
+                        lastLogin: user["Last Sign In [READ ONLY]"] || '',
+                        driveGB: driveGB,
+                        emailGB: emailGB,
+                        firstName: user["First Name [Required]"] || '',
+                        lastName: user["Last Name [Required]"] || ''
+                    };
+                });
+                
+                console.log(`Loaded ${users.length} users from JSON file`);
+                console.log('ALL users will be displayed - no filtering or omission');
+                
+                // Update all statistics based on actual data
+                updateDashboardStats(users);
+                
+                // Populate table with ALL users - no limit or pagination
+                populateUserTable(users);
+                
+            } catch (error) {
+                console.error('Error loading user data:', error);
+                // If no JSON file, show sample data
+                users = [
+                    { email: "keri.kaiser@fsastore.com", status: "Active", lastLogin: "2025/07/18", driveGB: 978.93, emailGB: 17.11 },
+                    { email: "samantha.swayze@fsastore.com", status: "Active", lastLogin: "2025/07/21", driveGB: 512.85, emailGB: 6.37 },
+                    { email: "jacob.medley@fsastore.com", status: "Active", lastLogin: "2025/07/06", driveGB: 206.65, emailGB: 1.59 },
+                    { email: "preston.farrington@fsastore.com", status: "Active", lastLogin: "2025/03/21", driveGB: 94.35, emailGB: 36.35 },
+                    { email: "seiya.vogt@fsastore.com", status: "Active", lastLogin: "2025/07/07", driveGB: 107.43, emailGB: 7.64 }
+                ];
+                
+                // Clear loading indicator and show sample data message
+                const tbody = document.getElementById('userTableBody');
+                tbody.innerHTML = '';
+                const row = tbody.insertRow(0);
+                row.innerHTML = '<td colspan="7" style="text-align: center; padding: 20px; background: #fef3c7; color: #92400e;">⚠️ Sample data shown - Upload your User_Download_24072025_221436.json file to see ALL users</td>';
+                
+                populateUserTable(users);
+            }
+        }
