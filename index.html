@@ -353,6 +353,24 @@
             border: 1px solid #a7f3d0;
         }
         
+        .filter-btn {
+            opacity: 0.6;
+            transition: all 0.2s ease;
+        }
+        
+        .filter-btn:hover {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+        
+        th[onclick] {
+            transition: background-color 0.2s ease;
+        }
+        
+        th[onclick]:hover {
+            background-color: #e5e7eb;
+        }
+        
         @media print {
             .no-print {
                 display: none;
@@ -376,18 +394,18 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 14px; opacity: 0.8;">Migration Analysis Dashboard</div>
-                <div style="font-size: 12px; opacity: 0.8;">Created by Dane Busgith</div>
-                <div style="font-size: 12px; opacity: 0.6;">Generated: <span id="currentDate"></span></div>
+                <div style="font-size: 12px; opacity: 0.8;">Prepared by Dane Busgith</div>
+                <div style="font-size: 12px; opacity: 0.6;">Analysis Date: <span id="currentDate"></span></div>
             </div>
         </div>
         
         <div class="critical-banner">
             <span class="icon">🎯</span>
-            <span>CRITICAL: You're paying approximately $14,670/month for BOTH Google Workspace AND Microsoft 365! 
-            After migration and optimization: Only $3,110/month = Save $11,560 EVERY MONTH! 💰</span>
+            <span>Current State: We are spending $14,670/month running both Google Workspace and Microsoft 365. 
+            Post-migration analysis shows we can reduce this to $3,110/month, saving $11,560 monthly.</span>
         </div>
         
-        <h1 class="dashboard-title">Google Workspace → Microsoft 365 Migration</h1>
+        <h1 class="dashboard-title">Google Workspace to Microsoft 365 Migration Analysis</h1>
         
         <div class="stats-grid">
             <div class="stat-card">
@@ -426,7 +444,7 @@
             <h2>💵 Cost Analysis & Licensing Strategy</h2>
             <div class="cost-comparison">
                 <div class="cost-card current-google">
-                    <h3>❌ Google Workspace</h3>
+                    <h3>Current Google Workspace</h3>
                     <div class="cost-amount">$131,220</div>
                     <div class="cost-detail">237 users annually</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
@@ -436,7 +454,7 @@
                     </div>
                 </div>
                 <div class="cost-card current-microsoft">
-                    <h3>⚠️ Current Microsoft</h3>
+                    <h3>Current Microsoft 365</h3>
                     <div class="cost-amount">$44,820</div>
                     <div class="cost-detail">Mixed licenses annually</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
@@ -447,68 +465,68 @@
                     </div>
                 </div>
                 <div class="cost-card total-current">
-                    <h3>💸 Total Current Spend</h3>
+                    <h3>Total Current Spend</h3>
                     <div class="cost-amount">$176,040</div>
-                    <div class="cost-detail">Google + M365 combined</div>
+                    <div class="cost-detail">Combined annual cost</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
                     <div style="font-size: 12px;">
                         Monthly: ~$14,670<br>
-                        <strong>Eliminate duplicate services!</strong>
+                        <strong>Dual platform overhead</strong>
                     </div>
                 </div>
                 <div class="cost-card optimized">
-                    <h3>✅ Optimized M365</h3>
+                    <h3>Optimized M365 Environment</h3>
                     <div class="cost-amount">$37,320</div>
                     <div class="cost-detail">170 active users optimized</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
                     <div style="font-size: 12px; text-align: left;">
-                        Keep existing E5: $2,542/mo<br>
-                        Optimize licensing: -$625/mo<br>
-                        Add Exchange P2 (5): +$40/mo
+                        Existing E5: $2,542/mo<br>
+                        License optimization: -$625/mo<br>
+                        Exchange P2 (5 users): +$40/mo
                     </div>
                 </div>
                 <div class="cost-card savings">
-                    <h3>💰 Total Savings</h3>
+                    <h3>Net Annual Savings</h3>
                     <div class="cost-amount">$138,720</div>
-                    <div class="cost-detail">Annual reduction</div>
+                    <div class="cost-detail">Cost reduction achieved</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
                     <div style="font-size: 12px;">
-                        From canceling Google: -$10,935/mo<br>
-                        From M365 optimization: -$625/mo<br>
-                        Net monthly savings: <strong>$11,560/mo</strong>
+                        Google elimination: -$10,935/mo<br>
+                        M365 optimization: -$625/mo<br>
+                        Monthly reduction: <strong>$11,560</strong>
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="recommendations">
-            <h2>🎯 Licensing Recommendations - SAVE $138,720 ANNUALLY!</h2>
+            <h2>🎯 Migration Recommendations - $138,720 Annual Cost Reduction</h2>
             <div class="recommendation-item">
-                <div class="recommendation-icon">🔥</div>
+                <div class="recommendation-icon">💰</div>
                 <div class="recommendation-content">
-                    <h3>MASSIVE SAVINGS OPPORTUNITY!</h3>
-                    <p>You're currently spending $131,220/year on Google Workspace Enterprise Plus for 237 users. By migrating to your existing M365 E5 licenses (keeping your Microsoft Office suite) and cleaning up inactive users, you'll save $138,720 annually - that's $11,560 EVERY MONTH! This migration will pay for itself in weeks.</p>
+                    <h3>Primary Cost Analysis</h3>
+                    <p>We are currently spending $131,220/year on Google Workspace Enterprise Plus for 237 users while maintaining Microsoft 365 licenses at $44,820/year. This dual licensing creates unnecessary overhead. Migration to a consolidated M365 environment will eliminate $138,720 in annual costs while maintaining full Office functionality.</p>
                 </div>
             </div>
             <div class="recommendation-item">
                 <div class="recommendation-icon">1</div>
                 <div class="recommendation-content">
-                    <h3>Optimize Your Microsoft Investment</h3>
-                    <p>Keep your existing Microsoft Office suite and E5 licenses for 155 users. Optimize by right-sizing licenses based on actual usage patterns while maintaining full Office functionality for your entire organization.</p>
+                    <h3>Licensing Optimization Strategy</h3>
+                    <p>Maintain existing M365 E5 licenses for 155 active users. Right-size licensing based on actual usage patterns while keeping full Office suite access across the organization. This approach leverages our current Microsoft investment.</p>
                 </div>
             </div>
             <div class="recommendation-item">
                 <div class="recommendation-icon">2</div>
                 <div class="recommendation-content">
-                    <h3>Heavy Mailbox Users (5 users)</h3>
-                    <p>Add Exchange Online Plan 2 ($8/user/month) for: keri.kaiser (996GB), samantha.swayze (519GB), jacob.medley (208GB), preston.farrington (131GB), seiya.vogt (115GB). This provides 100GB mailboxes.</p>
+                    <h3>High Storage User Management</h3>
+                    <p>Add Exchange Online Plan 2 ($8/user/month) for 5 users with storage >100GB: keri.kaiser (996GB), samantha.swayze (519GB), jacob.medley (208GB), preston.farrington (131GB), seiya.vogt (115GB). This provides adequate mailbox capacity.</p>
                 </div>
             </div>
             <div class="recommendation-item">
                 <div class="recommendation-icon">3</div>
                 <div class="recommendation-content">
-                    <h3>Immediate Actions - Keep Office Suite</h3>
-                    <p>Maintain full Microsoft Office functionality while eliminating Google Workspace redundancy. Delete 36 users inactive since 2017-2021. Archive data for 2 inactive heavy users (290GB total). Review 31 users inactive 30-180 days with managers.</p>
+                    <h3>User Account Cleanup Actions</h3>
+                    <p>Remove 36 users inactive since 2017-2021 to reduce licensing costs. Archive data for 2 inactive users with significant storage (290GB total). Review 31 users inactive 30-180 days with department managers for status confirmation.</p>
                 </div>
             </div>
         </div>
@@ -517,21 +535,30 @@
             <h2>👥 User Analysis & Migration Groups - ALL USERS</h2>
             
             <div id="loadingMessage" class="success-message" style="display: none;">
-                ✅ Successfully loaded all users from JSON file
+                ✅ Successfully loaded user data from JSON export
             </div>
             
             <div id="errorMessage" class="error-message" style="display: none;">
-                ❌ Error loading user data - showing sample data
+                ❌ Error loading user data - displaying sample data for demonstration
             </div>
             
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
                 <div>
                     <strong>Total Users in System: <span id="totalUserCount">Loading...</span></strong>
                 </div>
-                <div>
-                    <input type="text" id="searchInput" placeholder="Search users..." style="padding: 8px 12px; border: 1px solid #e5e7eb; border-radius: 6px; width: 300px; margin-right: 10px;">
-                    <button onclick="exportToCSV()" style="background: #10b981; color: white; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer;">📥 Export All Users</button>
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <input type="text" id="searchInput" placeholder="Search users..." style="padding: 8px 12px; border: 1px solid #e5e7eb; border-radius: 6px; width: 250px;">
+                    <button onclick="exportToCSV()" style="background: #10b981; color: white; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer;">📥 Export Filtered</button>
+                    <button onclick="exportAllUsers()" style="background: #6366f1; color: white; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer;">📥 Export All</button>
                 </div>
+            </div>
+            
+            <div style="margin-bottom: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="filter-btn" onclick="toggleFilter('active')" id="filter-active" style="background: #d1fae5; color: #065f46; padding: 6px 12px; border: 1px solid #10b981; border-radius: 6px; cursor: pointer; font-size: 12px;">✓ Active Only</button>
+                <button class="filter-btn" onclick="toggleFilter('highStorage')" id="filter-highStorage" style="background: #fee2e2; color: #991b1b; padding: 6px 12px; border: 1px solid #ef4444; border-radius: 6px; cursor: pointer; font-size: 12px;">📦 High Storage (>100GB)</button>
+                <button class="filter-btn" onclick="toggleFilter('inactive')" id="filter-inactive" style="background: #fef3c7; color: #92400e; padding: 6px 12px; border: 1px solid #f59e0b; border-radius: 6px; cursor: pointer; font-size: 12px;">⏰ Inactive (>6mo)</button>
+                <button class="filter-btn" onclick="toggleFilter('toDelete')" id="filter-toDelete" style="background: #fecaca; color: #7f1d1d; padding: 6px 12px; border: 1px solid #dc2626; border-radius: 6px; cursor: pointer; font-size: 12px;">🗑️ To Delete</button>
+                <button onclick="clearAllFilters()" style="background: #f3f4f6; color: #374151; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; font-size: 12px;">Clear Filters</button>
             </div>
             
             <div style="margin-bottom: 10px;">
@@ -542,15 +569,15 @@
                 <table id="userTable">
                     <thead>
                         <tr>
-                            <th>Email</th>
-                            <th>Name</th>
-                            <th>Status</th>
-                            <th>Last Login</th>
-                            <th>Email Storage (GB)</th>
-                            <th>Drive Storage (GB)</th>
-                            <th>Total Storage (GB)</th>
-                            <th>Recommended License</th>
-                            <th>Action</th>
+                            <th onclick="sortTable('email')" style="cursor: pointer; user-select: none;">Email <span id="sort-email">↕️</span></th>
+                            <th onclick="sortTable('name')" style="cursor: pointer; user-select: none;">Name <span id="sort-name">↕️</span></th>
+                            <th onclick="sortTable('status')" style="cursor: pointer; user-select: none;">Status <span id="sort-status">↕️</span></th>
+                            <th onclick="sortTable('lastLogin')" style="cursor: pointer; user-select: none;">Last Login <span id="sort-lastLogin">↕️</span></th>
+                            <th onclick="sortTable('emailGB')" style="cursor: pointer; user-select: none;">Email Storage (GB) <span id="sort-emailGB">↕️</span></th>
+                            <th onclick="sortTable('driveGB')" style="cursor: pointer; user-select: none;">Drive Storage (GB) <span id="sort-driveGB">↕️</span></th>
+                            <th onclick="sortTable('totalStorage')" style="cursor: pointer; user-select: none;">Total Storage (GB) <span id="sort-totalStorage">↕️</span></th>
+                            <th onclick="sortTable('license')" style="cursor: pointer; user-select: none;">Recommended License <span id="sort-license">↕️</span></th>
+                            <th onclick="sortTable('action')" style="cursor: pointer; user-select: none;">Action <span id="sort-action">↕️</span></th>
                         </tr>
                     </thead>
                     <tbody id="userTableBody">
@@ -561,42 +588,42 @@
         </div>
         
         <div class="migration-timeline">
-            <h2>📅 Migration Timeline</h2>
+            <h2>📅 Implementation Timeline</h2>
             <div class="timeline-phases">
                 <div class="phase-card phase-1">
-                    <h3>Phase 1: Preparation (Week 1-2)</h3>
+                    <h3>Phase 1: Environment Preparation (Week 1-2)</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li>✓ Clean up 67 inactive users</li>
-                        <li>✓ Assign Microsoft E5 licenses</li>
-                        <li>✓ Set up hybrid environment</li>
-                        <li>✓ Configure directory sync</li>
+                        <li>• Clean up 67 inactive user accounts</li>
+                        <li>• Assign Microsoft E5 licenses to active users</li>
+                        <li>• Configure hybrid environment setup</li>
+                        <li>• Establish directory synchronization</li>
                     </ul>
                 </div>
                 <div class="phase-card phase-2">
-                    <h3>Phase 2: Migration (Week 3-6)</h3>
+                    <h3>Phase 2: User Migration (Week 3-6)</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li>✓ Migrate pilot group (10 users)</li>
-                        <li>✓ Migrate standard users (155)</li>
-                        <li>✓ Migrate heavy users (5)</li>
-                        <li>✓ Validate data integrity</li>
+                        <li>• Migrate pilot group (10 users)</li>
+                        <li>• Migrate standard users (155)</li>
+                        <li>• Migrate high-storage users (5)</li>
+                        <li>• Validate data integrity and access</li>
                     </ul>
                 </div>
                 <div class="phase-card phase-3">
-                    <h3>Phase 3: Cutover (Week 7)</h3>
+                    <h3>Phase 3: Cutover & Cleanup (Week 7)</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li>✓ Update MX records</li>
-                        <li>✓ Decommission Google Workspace</li>
-                        <li>✓ User training completion</li>
-                        <li>✓ Save $11,560/month! 🎉</li>
+                        <li>• Update MX records and DNS</li>
+                        <li>• Decommission Google Workspace</li>
+                        <li>• Complete user training</li>
+                        <li>• Begin monthly savings of $11,560</li>
                     </ul>
                 </div>
             </div>
         </div>
         
         <div class="footer">
-            <p>Health-e Commerce Migration Analysis | Created by Dane Busgith | Data accurate as of <span id="footerDate"></span></p>
-            <p>This dashboard displays ALL users from your Google Workspace export - no users are omitted or hidden</p>
-            <p class="no-print">For questions or support, contact IT at <a href="mailto:it@health-ecommerce.com">it@health-ecommerce.com</a></p>
+            <p>Health-e Commerce Migration Analysis | Prepared by Dane Busgith | Data analysis as of <span id="footerDate"></span></p>
+            <p>This dashboard displays all users from the Google Workspace export - no users are omitted or hidden</p>
+            <p class="no-print">For questions or additional analysis, contact IT at <a href="mailto:it@health-ecommerce.com">it@health-ecommerce.com</a></p>
         </div>
     </div>
     
@@ -607,6 +634,9 @@
         
         // Initialize with empty users array - will be populated from JSON
         let users = [];
+        let filteredUsers = [];
+        let currentSort = { column: 'totalStorage', direction: 'desc' };
+        let activeFilters = [];
         
         // Function to determine license recommendation based on storage
         function getLicenseRecommendation(driveGB, emailGB) {
@@ -645,25 +675,163 @@
             return 'Standard migration';
         }
         
-        // Populate user table with ALL users
-        function populateUserTable(allUsers) {
+        // Sorting functionality
+        function sortTable(column) {
+            // Update sort direction
+            if (currentSort.column === column) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.column = column;
+                currentSort.direction = 'asc';
+            }
+            
+            // Update sort indicators
+            document.querySelectorAll('[id^="sort-"]').forEach(el => el.textContent = '↕️');
+            document.getElementById(`sort-${column}`).textContent = currentSort.direction === 'asc' ? '⬆️' : '⬇️';
+            
+            // Sort the filtered users
+            filteredUsers.sort((a, b) => {
+                let valueA, valueB;
+                
+                switch(column) {
+                    case 'email':
+                        valueA = a.email.toLowerCase();
+                        valueB = b.email.toLowerCase();
+                        break;
+                    case 'name':
+                        valueA = `${a.firstName || ''} ${a.lastName || ''}`.trim().toLowerCase();
+                        valueB = `${b.firstName || ''} ${b.lastName || ''}`.trim().toLowerCase();
+                        break;
+                    case 'status':
+                        valueA = a.status;
+                        valueB = b.status;
+                        break;
+                    case 'lastLogin':
+                        valueA = new Date(a.lastLogin.includes('Never') ? '1900-01-01' : a.lastLogin);
+                        valueB = new Date(b.lastLogin.includes('Never') ? '1900-01-01' : b.lastLogin);
+                        break;
+                    case 'emailGB':
+                        valueA = a.emailGB || 0;
+                        valueB = b.emailGB || 0;
+                        break;
+                    case 'driveGB':
+                        valueA = a.driveGB || 0;
+                        valueB = b.driveGB || 0;
+                        break;
+                    case 'totalStorage':
+                        valueA = (a.driveGB || 0) + (a.emailGB || 0);
+                        valueB = (b.driveGB || 0) + (b.emailGB || 0);
+                        break;
+                    case 'license':
+                        valueA = getLicenseRecommendation(a.driveGB || 0, a.emailGB || 0);
+                        valueB = getLicenseRecommendation(b.driveGB || 0, b.emailGB || 0);
+                        break;
+                    case 'action':
+                        valueA = getAction(a);
+                        valueB = getAction(b);
+                        break;
+                    default:
+                        return 0;
+                }
+                
+                if (valueA < valueB) return currentSort.direction === 'asc' ? -1 : 1;
+                if (valueA > valueB) return currentSort.direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+            
+            // Re-render the table
+            renderTable();
+        }
+        
+        // Filter functionality
+        function toggleFilter(filterType) {
+            const button = document.getElementById(`filter-${filterType}`);
+            
+            if (activeFilters.includes(filterType)) {
+                // Remove filter
+                activeFilters = activeFilters.filter(f => f !== filterType);
+                button.style.opacity = '0.6';
+                button.style.background = button.style.background.replace('f1', 'f9');
+            } else {
+                // Add filter
+                activeFilters.push(filterType);
+                button.style.opacity = '1';
+                button.style.background = button.style.background.replace('f9', 'f1');
+            }
+            
+            applyFilters();
+        }
+        
+        function clearAllFilters() {
+            activeFilters = [];
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.style.opacity = '0.6';
+                btn.style.background = btn.style.background.replace('f1', 'f9');
+            });
+            applyFilters();
+        }
+        
+        function applyFilters() {
+            filteredUsers = users.filter(user => {
+                // Search filter
+                const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+                const fullName = `${user.firstName || ''} ${user.lastName || ''}`.trim();
+                const matchesSearch = searchTerm === '' || 
+                    user.email.toLowerCase().includes(searchTerm) ||
+                    fullName.toLowerCase().includes(searchTerm) ||
+                    user.status.toLowerCase().includes(searchTerm);
+                
+                if (!matchesSearch) return false;
+                
+                // Active filters
+                for (let filter of activeFilters) {
+                    const totalStorage = (user.driveGB || 0) + (user.emailGB || 0);
+                    const lastLoginDate = new Date(user.lastLogin.includes('Never') ? '1900-01-01' : user.lastLogin);
+                    const sixMonthsAgo = new Date();
+                    sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+                    
+                    switch(filter) {
+                        case 'active':
+                            if (user.status !== 'Active') return false;
+                            break;
+                        case 'highStorage':
+                            if (totalStorage <= 100) return false;
+                            break;
+                        case 'inactive':
+                            if (lastLoginDate > sixMonthsAgo && !user.lastLogin.includes('Never')) return false;
+                            break;
+                        case 'toDelete':
+                            if (user.status === 'Active' && 
+                                !user.lastLogin.includes('Never') && 
+                                lastLoginDate > new Date('2022-01-01')) return false;
+                            break;
+                    }
+                }
+                
+                return true;
+            });
+            
+            // Apply current sort
+            if (currentSort.column) {
+                sortTable(currentSort.column);
+            } else {
+                renderTable();
+            }
+        }
+        
+        function renderTable() {
             const tbody = document.getElementById('userTableBody');
             tbody.innerHTML = '';
             
-            console.log(`Populating table with ${allUsers.length} users`);
-            
             // Update user count display
-            document.getElementById('userCount').textContent = `Showing all ${allUsers.length} users`;
-            document.getElementById('totalUserCount').textContent = allUsers.length;
+            const searchTerm = document.getElementById('searchInput').value;
+            if (searchTerm || activeFilters.length > 0) {
+                document.getElementById('userCount').textContent = `Showing ${filteredUsers.length} of ${users.length} users`;
+            } else {
+                document.getElementById('userCount').textContent = `Showing all ${users.length} users`;
+            }
             
-            // Sort users by total storage descending
-            const sortedUsers = allUsers.sort((a, b) => {
-                const totalA = (a.driveGB || 0) + (a.emailGB || 0);
-                const totalB = (b.driveGB || 0) + (b.emailGB || 0);
-                return totalB - totalA;
-            });
-            
-            sortedUsers.forEach((user, index) => {
+            filteredUsers.forEach((user, index) => {
                 const totalStorage = (user.driveGB || 0) + (user.emailGB || 0);
                 const license = getLicenseRecommendation(user.driveGB || 0, user.emailGB || 0);
                 const action = getAction(user);
@@ -682,8 +850,24 @@
                     <td>${action}</td>
                 `;
             });
+        }
+        
+        // Populate user table with ALL users
+        function populateUserTable(allUsers) {
+            console.log(`Populating table with ${allUsers.length} users`);
             
-            console.log(`Successfully populated table with ${sortedUsers.length} users`);
+            // Update user count display
+            document.getElementById('totalUserCount').textContent = allUsers.length;
+            
+            // Initialize filtered users
+            filteredUsers = [...allUsers];
+            
+            // Apply default sort (total storage descending)
+            currentSort = { column: 'totalStorage', direction: 'desc' };
+            document.getElementById('sort-totalStorage').textContent = '⬇️';
+            
+            // Apply initial sort and render
+            sortTable('totalStorage');
         }
         
         // Update dashboard statistics based on actual data
@@ -724,29 +908,32 @@
             console.log(`Stats updated: ${activeUsers} active, ${usersToDelete} to delete, ${largeMailboxes} large mailboxes`);
         }
         
-        // Search functionality
+        // Search functionality - now integrated with filters
         document.getElementById('searchInput').addEventListener('keyup', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const rows = document.querySelectorAll('#userTableBody tr');
-            let visibleCount = 0;
-            
-            rows.forEach(row => {
-                const text = row.textContent.toLowerCase();
-                const isVisible = text.includes(searchTerm);
-                row.style.display = isVisible ? '' : 'none';
-                if (isVisible) visibleCount++;
-            });
-            
-            // Update user count display
-            if (searchTerm) {
-                document.getElementById('userCount').textContent = `Showing ${visibleCount} of ${users.length} users`;
-            } else {
-                document.getElementById('userCount').textContent = `Showing all ${users.length} users`;
-            }
+            applyFilters();
         });
         
-        // Export to CSV - exports ALL users
+        // Export filtered results to CSV
         function exportToCSV() {
+            let csv = 'Email,First Name,Last Name,Status,Last Login,Drive (GB),Email (GB),Total Storage (GB),Recommended License,Action\n';
+            filteredUsers.forEach(user => {
+                const totalStorage = (user.driveGB || 0) + (user.emailGB || 0);
+                const license = getLicenseRecommendation(user.driveGB || 0, user.emailGB || 0);
+                const action = getAction(user);
+                csv += `"${user.email}","${user.firstName || ''}","${user.lastName || ''}","${user.status}","${user.lastLogin}",${user.driveGB || 0},${user.emailGB || 0},${totalStorage.toFixed(2)},"${license}","${action}"\n`;
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `health-ecommerce_migration_filtered_${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+        
+        // Export ALL users to CSV
+        function exportAllUsers() {
             let csv = 'Email,First Name,Last Name,Status,Last Login,Drive (GB),Email (GB),Total Storage (GB),Recommended License,Action\n';
             users.forEach(user => {
                 const totalStorage = (user.driveGB || 0) + (user.emailGB || 0);
@@ -807,7 +994,7 @@
                 
                 // Show success message
                 document.getElementById('loadingMessage').style.display = 'block';
-                document.getElementById('loadingMessage').innerHTML = `✅ Successfully loaded ALL ${users.length} users from JSON file`;
+                document.getElementById('loadingMessage').innerHTML = `✅ Successfully loaded user data from JSON export (${users.length} users)`;
                 
                 // Update all statistics based on actual data
                 updateDashboardStats(users);
