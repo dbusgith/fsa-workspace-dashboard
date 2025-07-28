@@ -106,6 +106,25 @@
             letter-spacing: -0.5px;
         }
         
+        .regulatory-notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            color: #92400e;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 2px solid #f59e0b;
+            box-shadow: 0 4px 16px rgba(245, 158, 11, 0.15);
+        }
+        
+        .regulatory-notice h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -571,11 +590,17 @@
         
         <div class="critical-banner">
             <span class="icon">🎯</span>
-            <span>MASSIVE OPPORTUNITY: We're paying $16,332/month for Google Workspace + EM+S E5 + Business Standard + Virtru running in parallel. 
-            M365 E5 includes EVERYTHING (including secure email!) and replaces all four systems! New cost: $9,730/month total. That's $6,602 monthly savings! 💰</span>
+            <span>UPDATED ANALYSIS: Due to EU regulatory changes, Microsoft 365 E5 now requires separate Teams licensing. 
+            Total cost: M365 E5 ($57/month) + Teams Enterprise ($5.51/month) = $63/month per user. 
+            For 170 users: $10,710/month vs current $16,332/month = Still saving $5,622 monthly! 💰</span>
         </div>
         
-        <h1 class="dashboard-title">Google Workspace to Microsoft 365 Migration Analysis</h1>
+        <div class="regulatory-notice">
+            <h3>⚖️ Important: EU Regulatory Changes Impact</h3>
+            <p><strong>Microsoft was required by European regulators to unbundle Teams from Microsoft 365</strong> due to antitrust concerns. This means we now need TWO licenses per user instead of one bundled license. This is NOT Microsoft trying to upsell - it's a regulatory requirement that affects all organizations globally. The good news: our migration still delivers substantial savings and enhanced functionality. Dane to speak with Microsoft Reps to see if we can have a greater savings and pitch our move away from Google as an incentive for them.</p>
+        </div>
+        
+        <h1 class="dashboard-title">Google Workspace to Microsoft 365 Migration Analysis<br><small style="font-size: 18px; color: #64748b; font-weight: 400;">Updated for EU Regulatory Unbundling Requirements</small></h1>
         
         <div class="stats-grid">
             <div class="stat-card">
@@ -585,7 +610,7 @@
             </div>
             <div class="stat-card">
                 <div class="stat-icon icon-dollar">💰</div>
-                <div class="stat-value" id="annualSavings">$79,223</div>
+                <div class="stat-value" id="annualSavings">$67,464</div>
                 <div class="stat-label">Net Annual Savings</div>
             </div>
             <div class="stat-card">
@@ -605,22 +630,23 @@
             </div>
             <div class="stat-card">
                 <div class="stat-icon icon-percent">📈</div>
-                <div class="stat-value" id="costReduction">40.4%</div>
+                <div class="stat-value" id="costReduction">34.4%</div>
                 <div class="stat-label">Cost Reduction</div>
             </div>
         </div>
         
         <div class="cost-analysis">
-            <h2>💵 Current Licensing Costs & Consolidation Opportunity</h2>
+            <h2>💵 Updated Licensing Costs - EU Regulatory Impact</h2>
             <div class="cost-comparison">
                 <div class="cost-card current-google">
-                    <h3>❌ Google Workspace</h3>
+                    <h3>❌ Google Workspace (Current)</h3>
                     <div class="cost-amount">$131,220</div>
                     <div class="cost-detail">237 users annually</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
                     <div style="font-size: 12px; text-align: left;">
-                        Enterprise Plus: ~$466/user/mo<br>
-                        237 licenses: $10,935/mo
+                        Enterprise Plus: $466/user/mo<br>
+                        237 licenses: $10,935/mo<br>
+                        <strong>TO BE ELIMINATED</strong>
                     </div>
                 </div>
                 <div class="cost-card current-microsoft">
@@ -629,215 +655,144 @@
                     <div class="cost-detail">EM+S E5 + Business Standard annually</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
                     <div style="font-size: 11px; text-align: left; line-height: 1.4;">
-                        <strong>Current License Breakdown:</strong><br>
-                        • 166 users × EM+S E5 ($16.40/mo) = $2,722/mo<br>
-                        • 170 users × Business Standard ($12.50/mo) = $2,125/mo<br>
+                        <strong>Current Setup (TO BE REPLACED):</strong><br>
+                        • 166 users × EM+S E5 ($16.40/mo)<br>
+                        • 170 users × Business Standard ($12.50/mo)<br>
                         <strong>Monthly Total: $4,847/mo</strong><br>
-                        <strong>Annual: $58,169</strong><br>
-                        <em>Based on actual M365 Admin license assignment</em>
+                        <em>Will upgrade to unified M365 E5</em>
                     </div>
                 </div>
                 <div class="cost-card" style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); border: 2px solid #8b5cf6;">
-                    <h3>🔒 Virtru Secure Email</h3>
+                    <h3>🔒 Virtru Secure Email (Current)</h3>
                     <div class="cost-amount">$6,594</div>
                     <div class="cost-detail">~40 users annually</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
                     <div style="font-size: 11px; text-align: left; line-height: 1.4;">
-                        <strong>Current Virtru Setup:</strong><br>
-                        • Platform Subscription: $3,883/year<br>
+                        <strong>Current Virtru (TO BE ELIMINATED):</strong><br>
+                        • Platform: $3,883/year<br>
                         • Email + Gateway: $75/year<br>
-                        • 38 Email Users: $2,133/year<br>
-                        <strong>Only 25% of company has secure email</strong><br>
-                        <em>Would cost $28K/year for all 170 users</em>
+                        • 38 Users: $2,133/year<br>
+                        <em>M365 E5 includes equivalent security</em>
                     </div>
                 </div>
                 <div class="cost-card total-current">
                     <h3>💸 Total Current Spend</h3>
                     <div class="cost-amount">$195,983</div>
-                    <div class="cost-detail">Google + EM+S E5 + Business Standard + Virtru</div>
+                    <div class="cost-detail">All current systems combined</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
                     <div style="font-size: 11px;">
-                        Google Workspace: $131,220/year<br>
-                        Microsoft EM+S E5: $32,669/year<br>
-                        Microsoft Business Standard: $25,500/year<br>
-                        Virtru Secure Email: $6,594/year<br>
-                        <strong>Combined Monthly: $16,332</strong><br>
-                        <strong>Combined Annual: $195,983</strong><br>
-                        <em>Four separate systems for overlapping services</em>
+                        Google: $131,220 + Microsoft: $58,169 + Virtru: $6,594<br>
+                        <strong>Monthly: $16,332</strong><br>
+                        <strong>Managing 4 separate systems</strong>
                     </div>
                 </div>
                 <div class="cost-card optimized">
-                    <h3>✅ M365 E5 (All-in-One)</h3>
-                    <div class="cost-amount">$116,640</div>
-                    <div class="cost-detail">170 users with everything included!</div>
+                    <h3>✅ New M365 E5 + Teams Structure</h3>
+                    <div class="cost-amount">$128,520</div>
+                    <div class="cost-detail">170 users with complete solution</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
                     <div style="font-size: 11px; text-align: left; line-height: 1.4;">
-                        <strong>Single License Solution:</strong><br>
-                        • 170 users × M365 E5 ($57/mo) = $9,690/mo<br>
-                        • 5 heavy users × Exchange P2 ($8/mo) = $40/mo<br>
-                        <strong>Monthly Total: $9,730/mo</strong><br>
-                        <strong>Annual: $116,760</strong><br>
-                        <strong>Includes:</strong> Office + Security + Email + <strong>Built-in Secure Email!</strong><br>
-                        <em>Replaces Google + EM+S + Business + Virtru</em>
+                        <strong>New Licensing (REQUIRED):</strong><br>
+                        • 170 × M365 E5 ($57/mo) = $9,690/mo<br>
+                        • 170 × Teams Enterprise ($5.51/mo) = $937/mo<br>
+                        • 5 × Exchange Plan 2 ($8/mo) = $40/mo<br>
+                        <strong>Total: $10,667/mo ($127,997/year)</strong><br>
+                        <em>Due to EU regulatory unbundling</em>
                     </div>
                 </div>
                 <div class="cost-card savings">
-                    <h3>💰 Total Savings</h3>
-                    <div class="cost-amount">$79,223</div>
-                    <div class="cost-detail">Annual reduction + secure email for ALL</div>
+                    <h3>💰 Net Savings</h3>
+                    <div class="cost-amount">$67,464</div>
+                    <div class="cost-detail">Annual reduction despite unbundling</div>
                     <hr style="margin: 10px 0; opacity: 0.3;">
                     <div style="font-size: 11px; line-height: 1.4;">
-                        <strong>Massive Consolidation Savings:</strong><br>
+                        <strong>Monthly Savings Breakdown:</strong><br>
                         Eliminate Google: -$10,935/mo<br>
+                        Eliminate current Microsoft: -$4,847/mo<br>
                         Eliminate Virtru: -$550/mo<br>
-                        Net M365 upgrade cost: +$4,883/mo<br>
-                        <strong>Total Monthly Savings: $6,602/mo</strong><br>
-                        <strong>Annual Savings: $79,223</strong><br>
-                        <em>BONUS: Secure email for ALL 170 users!</em>
+                        Add M365 E5 + Teams: +$10,667/mo<br>
+                        <strong>Net Savings: $5,622/mo</strong>
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="approaches-section">
-            <h2>🎯 Migration Approach Options</h2>
+            <h2>🎯 Migration Approach Options (Updated for Regulatory Changes)</h2>
             <div class="approaches-grid">
                 <div class="approach-card approach-conservative">
                     <h3>🛡️ Conservative Approach</h3>
                     <div class="approach-savings">$137,814 Annual Savings</div>
                     <div class="approach-details">
-                        <strong>Strategy:</strong> Keep existing EM+S E5 + Business Standard, only cancel Google Workspace + Virtru<br><br>
-                        <strong>Timeline:</strong> 8-12 weeks with extensive testing<br><br>
-                        <strong>Pros:</strong> Lower risk, minimal disruption, existing license investment preserved, immediate secure email for all via M365<br><br>
-                        <strong>Cons:</strong> Still managing two separate Microsoft license types, smaller savings potential<br><br>
-                        <strong>Monthly Cost:</strong> $4,847 (EM+S E5 + Business Standard)<br>
-                        <strong>Risk Level:</strong> Very Low
+                        <strong>Strategy:</strong> Keep existing EM+S E5 + Business Standard, only cancel Google Workspace + Virtru. Add Teams Enterprise separately.<br><br>
+                        <strong>New Cost:</strong> Current Microsoft ($4,847/mo) + Teams Enterprise ($937/mo) = $5,784/mo<br><br>
+                        <strong>Pros:</strong> Minimal disruption, lower risk, preserves existing licenses<br><br>
+                        <strong>Cons:</strong> Still managing multiple license types, no Office suite upgrade<br><br>
+                        <strong>Timeline:</strong> 8-12 weeks
                     </div>
                 </div>
                 
                 <div class="approach-card approach-moderate">
                     <h3>⚖️ Moderate Approach (Recommended)</h3>
-                    <div class="approach-savings">$79,223 Annual Savings</div>
+                    <div class="approach-savings">$67,464 Annual Savings</div>
                     <div class="approach-details">
-                        <strong>Strategy:</strong> Upgrade to M365 E5 for active users, replaces all four systems (Google + EM+S + Business + Virtru)<br><br>
-                        <strong>Timeline:</strong> 6-8 weeks with phased rollout<br><br>
-                        <strong>Pros:</strong> Single license type, full Office suite, built-in secure email for ALL users, better integration, significant savings<br><br>
-                        <strong>Cons:</strong> Requires license upgrade, moderate complexity<br><br>
-                        <strong>Monthly Cost:</strong> $9,730 (M365 E5 + Exchange P2)<br>
-                        <strong>Risk Level:</strong> Medium
+                        <strong>Strategy:</strong> Full upgrade to M365 E5 + Teams Enterprise, replacing all current systems with unified solution.<br><br>
+                        <strong>New Cost:</strong> M365 E5 ($9,690/mo) + Teams Enterprise ($937/mo) + Exchange P2 ($40/mo) = $10,667/mo<br><br>
+                        <strong>Pros:</strong> Complete Office suite, unified licensing, advanced security, significant savings<br><br>
+                        <strong>Cons:</strong> Requires two licenses per user due to EU regulations<br><br>
+                        <strong>Timeline:</strong> 6-8 weeks
                     </div>
                 </div>
                 
                 <div class="approach-card approach-aggressive">
                     <h3>🚀 Aggressive Approach</h3>
-                    <div class="approach-savings">$96,174 Annual Savings</div>
+                    <div class="approach-savings">$84,415 Annual Savings</div>
                     <div class="approach-details">
-                        <strong>Strategy:</strong> Full M365 E5 migration + aggressive license optimization + rapid timeline + eliminate all third-party tools<br><br>
-                        <strong>Timeline:</strong> 4-6 weeks with big bang cutover<br><br>
-                        <strong>Pros:</strong> Maximum savings, fastest ROI, complete modernization, single license type, secure email for all<br><br>
-                        <strong>Cons:</strong> Higher risk, potential disruption, requires extensive change management<br><br>
-                        <strong>Monthly Cost:</strong> $8,320 (highly optimized M365 E5)<br>
-                        <strong>Risk Level:</strong> High
+                        <strong>Strategy:</strong> M365 E5 + Teams with aggressive user optimization, rapid deployment, eliminate all redundancies.<br><br>
+                        <strong>New Cost:</strong> Optimized licensing for 155 users = $9,765/mo<br><br>
+                        <strong>Pros:</strong> Maximum savings, fastest ROI, complete modernization<br><br>
+                        <strong>Cons:</strong> Higher risk, extensive change management, still requires dual licensing<br><br>
+                        <strong>Timeline:</strong> 4-6 weeks
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Migration Decision Guide -->
-        <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 35px; border-radius: 16px; margin-bottom: 30px; border: 2px solid rgba(125, 211, 192, 0.2);">
-            <h2 style="font-size: 22px; margin-bottom: 25px; color: #1e293b; font-weight: 700; text-align: center;">💡 Which Approach Should We Choose?</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                <div style="background: white; padding: 20px; border-radius: 12px; border-left: 4px solid #3b82f6;">
-                    <h3 style="color: #3b82f6; font-size: 16px; margin-bottom: 12px; font-weight: 600;">🛡️ Choose Conservative If:</h3>
-                    <ul style="color: #374151; font-size: 14px; line-height: 1.6; margin: 0; padding-left: 16px;">
-                        <li>Our current Microsoft setup is working well for everyone</li>
-                        <li>Our users are comfortable with existing tools</li>
-                        <li>Budget constraints are our primary concern</li>
-                        <li>We want minimal disruption during migration</li>
-                        <li>We can easily manage multiple license types</li>
-                    </ul>
-                    <div style="margin-top: 15px; padding: 10px; background: #dbeafe; border-radius: 6px; font-size: 13px; color: #1e40af;">
-                        <strong>Best for us if:</strong> We're prioritizing maximum cost savings and stability over feature upgrades
-                    </div>
-                </div>
-                
-                <div style="background: white; padding: 20px; border-radius: 12px; border-left: 4px solid #059669;">
-                    <h3 style="color: #059669; font-size: 16px; margin-bottom: 12px; font-weight: 600;">⚖️ Choose Moderate If:</h3>
-                    <ul style="color: #374151; font-size: 14px; line-height: 1.6; margin: 0; padding-left: 16px;">
-                        <li>We want the full Microsoft Office experience for our team</li>
-                        <li>Licensing simplification is important to us</li>
-                        <li>We want secure email for ALL users, not just 25%</li>
-                        <li>Our users need premium collaboration features</li>
-                        <li>We want better integration across all our apps</li>
-                        <li>ROI timeline of 6-8 months works for our budget</li>
-                        <li>We want to eliminate managing four separate systems</li>
-                    </ul>
-                    <div style="margin-top: 15px; padding: 10px; background: #d1fae5; border-radius: 6px; font-size: 13px; color: #065f46;">
-                        <strong>Best for us if:</strong> We're seeking the sweet spot between savings, features, and manageable risk while giving everyone secure email capabilities
-                    </div>
-                </div>
-                
-                <div style="background: white; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b;">
-                    <h3 style="color: #f59e0b; font-size: 16px; margin-bottom: 12px; font-weight: 600;">🚀 Choose Aggressive If:</h3>
-                    <ul style="color: #374151; font-size: 14px; line-height: 1.6; margin: 0; padding-left: 16px;">
-                        <li>We have strong change management capabilities</li>
-                        <li>Maximum savings and modernization are our priorities</li>
-                        <li>Our IT team can handle rapid deployment</li>
-                        <li>We want to eliminate all redundancies quickly</li>
-                        <li>Fast ROI (3-4 months) is critical for us</li>
-                    </ul>
-                    <div style="margin-top: 15px; padding: 10px; background: #fef3c7; border-radius: 6px; font-size: 13px; color: #92400e;">
-                        <strong>Best for us if:</strong> We have strong IT capabilities and tolerance for higher-risk, higher-reward scenarios
-                    </div>
-                </div>
-            </div>
-            
-            <div style="margin-top: 25px; padding: 20px; background: linear-gradient(135deg, #7dd3c0 0%, #5eead4 100%); border-radius: 12px; color: #1e293b;">
-                <h4 style="font-size: 16px; margin-bottom: 10px; font-weight: 700;">🎯 My Recommendation: Moderate Approach</h4>
-                <p style="margin: 0; font-size: 14px; line-height: 1.6; font-weight: 500;">
-                    Based on our current four-system setup and IT expertise, the <strong>Moderate Approach</strong> offers the best balance. We'll get significant savings ($79,223/year), 
-                    administrative simplification (one license instead of four separate systems), secure email for ALL users (not just 25%), and the full Microsoft ecosystem. The 6-8 week timeline 
-                    allows for proper testing and user training while maximizing long-term benefits and completely eliminating Virtru costs.
-                </p>
             </div>
         </div>
         
         <div class="recommendations">
-            <h2>🎯 My Recommendations - $79,223 Annual Savings + Secure Email for ALL</h2>
+            <h2>🎯 Updated Recommendations - Navigating EU Regulatory Requirements</h2>
             <div class="recommendation-item">
-                <div class="recommendation-icon">🔒</div>
+                <div class="recommendation-icon">⚖️</div>
                 <div class="recommendation-content">
-                    <h3>BONUS: Eliminate Virtru & Give Everyone Secure Email</h3>
-                    <p>Right now only 25% of our team (~40 users) have secure email through Virtru at $6,594/year. M365 E5 includes Office Message Encryption (OME) and Azure Information Protection that provides the SAME secure email capabilities for ALL 170 users at no additional cost. We'll save the $6,594 Virtru cost AND give secure email to everyone - that's a $28,000 value if we had to buy Virtru for all users!</p>
+                    <h3>Understanding the Regulatory Impact</h3>
+                    <p>The EU forced Microsoft to separate Teams from Office 365/Microsoft 365 to promote competition. This affects ALL customers globally, not just EU organizations. We now need Microsoft 365 E5 ($57/month) + Teams Enterprise ($5.51/month) = $63/month per user. This isn't Microsoft's choice - it's regulatory compliance. The good news: we still save $67,464 annually while getting superior functionality.</p>
                 </div>
             </div>
             <div class="recommendation-item">
                 <div class="recommendation-icon">💡</div>
                 <div class="recommendation-content">
-                    <h3>The Complete Consolidation Picture</h3>
-                    <p>We're currently spending $195,983/year across FOUR separate systems: Google Workspace ($131,220), EM+S E5 ($32,669), Business Standard ($25,500), and Virtru ($6,594). M365 E5 at $57/month includes EVERYTHING from all four systems plus additional premium features. This consolidation will save us $79,223 annually while dramatically simplifying our entire IT infrastructure.</p>
+                    <h3>What We're Adding vs. Removing</h3>
+                    <p><strong>ADDING:</strong> M365 E5 (full Office suite + enterprise security) + Teams Enterprise (collaboration platform). <strong>REMOVING:</strong> Google Workspace ($131,220/year), current EM+S E5 ($32,669/year), Business Standard ($25,500/year), and Virtru ($6,594/year). Despite the forced dual licensing, we're consolidating from 4 systems to 2 licenses per user, dramatically simplifying administration.</p>
                 </div>
             </div>
             <div class="recommendation-item">
                 <div class="recommendation-icon">1</div>
                 <div class="recommendation-content">
-                    <h3>One License to Rule Them All</h3>
-                    <p>M365 E5 includes: Full Office suite (replaces Business Standard) + Enterprise security (includes all EM+S E5 features) + Exchange/Teams/SharePoint (replaces Google Workspace) + Built-in secure email & data protection (replaces Virtru). Instead of managing four separate systems, we'll have one comprehensive solution that does everything better.</p>
+                    <h3>The Complete Solution We're Getting</h3>
+                    <p>M365 E5 includes: Full Office applications, Exchange Online, SharePoint, OneDrive, Enterprise Mobility + Security, Windows 10/11 licensing, advanced compliance tools, and built-in data protection. Teams Enterprise adds: Advanced meeting features, enterprise calling, compliance recording, and premium collaboration tools. Together, they replace everything we currently have across our 4 separate systems.</p>
                 </div>
             </div>
             <div class="recommendation-item">
                 <div class="recommendation-icon">2</div>
                 <div class="recommendation-content">
-                    <h3>Secure Email Capabilities in M365 E5</h3>
-                    <p>M365 E5's built-in secure email features include: Office Message Encryption (encrypt emails to anyone), Azure Information Protection (automatic classification), Advanced Threat Protection (safe links/attachments), and Data Loss Prevention (prevent sensitive data leaks). These match or exceed Virtru's capabilities and work seamlessly across all Microsoft apps.</p>
+                    <h3>Why This Still Makes Financial Sense</h3>
+                    <p>Even with the regulatory-required dual licensing, we're saving $5,622 monthly ($67,464 annually). We're eliminating: Google Workspace admin complexity, Virtru separate billing, managing multiple Microsoft license types, and vendor relationship complexity. The operational efficiency gains, combined with enhanced security and productivity features, make this migration financially and strategically sound.</p>
                 </div>
             </div>
             <div class="recommendation-item">
                 <div class="recommendation-icon">3</div>
                 <div class="recommendation-content">
-                    <h3>Massive Administrative Simplification</h3>
-                    <p>Beyond the $79,223 annual savings, we'll eliminate the complexity of managing Google Admin Console, multiple Microsoft license types, Virtru administration, and user provisioning across four systems. One license, one admin portal, one support relationship, one security model. The operational efficiency gains are enormous.</p>
+                    <h3>Administrative Simplification Despite Dual Licensing</h3>
+                    <p>While we need two licenses per user due to regulations, both are managed through the same Microsoft 365 admin center. We'll eliminate: Google Admin Console, Virtru management portal, separate support relationships, and complex user provisioning across multiple systems. One vendor, one admin portal, one security model - just with two license components instead of one bundled license.</p>
                 </div>
             </div>
         </div>
@@ -952,26 +907,26 @@
         </div>
         
         <div class="migration-timeline">
-            <h2>📅 Migration Timeline</h2>
+            <h2>📅 Migration Timeline (Updated for Dual Licensing)</h2>
             <div class="timeline-phases">
                 <div class="phase-card phase-1">
                     <h3>Phase 1: Preparation (Weeks 1-2)</h3>
                     <ul style="list-style: none; padding: 0;">
                         <li>✓ Clean up inactive accounts (67 users)</li>
-                        <li>✓ Upgrade our EM+S E5 to M365 E5 licenses</li>
+                        <li>✓ Purchase M365 E5 + Teams Enterprise licenses</li>
                         <li>✓ Configure Exchange hybrid environment</li>
                         <li>✓ Set up Azure AD Connect sync</li>
-                        <li>✓ Plan Virtru data protection migration</li>
+                        <li>✓ Plan Teams deployment strategy</li>
                     </ul>
                 </div>
                 <div class="phase-card phase-2">
                     <h3>Phase 2: Migration (Weeks 3-6)</h3>
                     <ul style="list-style: none; padding: 0;">
                         <li>✓ Start with pilot group (10 users)</li>
-                        <li>✓ Migrate standard users (155 people)</li>
+                        <li>✓ Deploy M365 E5 to standard users (155)</li>
+                        <li>✓ Deploy Teams Enterprise to all users</li>
                         <li>✓ Handle high-storage users separately (5 users)</li>
-                        <li>✓ Configure M365 E5 secure email for all users</li>
-                        <li>✓ Validate data integrity and functionality</li>
+                        <li>✓ Validate dual-license functionality</li>
                     </ul>
                 </div>
                 <div class="phase-card phase-3">
@@ -980,16 +935,16 @@
                         <li>✓ Update MX records for mail routing</li>
                         <li>✓ Decommission Google Workspace</li>
                         <li>✓ Cancel Virtru subscription</li>
-                        <li>✓ Complete user training and support</li>
-                        <li>✓ Start saving $6,602/month! 🎉</li>
+                        <li>✓ Complete user training on new dual-license setup</li>
+                        <li>✓ Start saving $5,622/month! 🎉</li>
                     </ul>
                 </div>
             </div>
         </div>
         
         <div class="footer">
-            <p>Migration Analysis prepared by Dane Busgith | Data sourced from Google Workspace export 7/28/2025</p>
-            <p>This dashboard displays all users from the Google Workspace export - complete user inventory included</p>
+            <p>Migration Analysis prepared by Dane Busgith | Updated for EU regulatory requirements | Data sourced from Google Workspace export 7/28/2025</p>
+            <p>This dashboard reflects the current Microsoft licensing structure following EU regulatory changes requiring Teams unbundling</p>
             <p class="no-print">Questions about this analysis? Contact me: <a href="mailto:dane.busgith@fsastore.com">dane.busgith@fsastore.com</a></p>
         </div>
     </div>
@@ -1005,11 +960,11 @@
         function getLicenseRecommendation(driveGB, emailGB) {
             const totalGB = driveGB + emailGB;
             if (totalGB > 100) {
-                return "M365 E5 + Exchange Plan 2";
+                return "M365 E5 + Teams + Exchange P2";
             } else if (emailGB > 50) {
-                return "M365 E5 + Exchange Plan 2";
+                return "M365 E5 + Teams + Exchange P2";
             } else {
-                return "M365 E5 Standard";
+                return "M365 E5 + Teams Enterprise";
             }
         }
         
